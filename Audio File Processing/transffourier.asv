@@ -1,0 +1,13 @@
+function [f, tfx] = transffourier(y, Nf, fs)
+%% Initialize 
+Nt=length(y);
+f=zeros(Nf,1);
+tfx = zeros(Nf,1);
+
+
+k=0:1:Nf-1;         
+f=k*fs/Nf;      %frequancy  vector
+y_Nf = fft(y, Nf);
+tfx = 1/fs*y_Nf;
+end
+
